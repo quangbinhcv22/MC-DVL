@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blockbench user</author>
+      <authoring_tool>Blockbench</authoring_tool>
+    </contributor>
+    <created>2022-09-03T02:59:20.020Z</created>
+    <modified>2022-09-03T02:59:20.020Z</modified>
+    <unit name="meter" meter="1.0"/>
+    <up_axis>Y_UP</up_axis>
+  </asset>
+  <library_effects>
+    <effect id="Material_0-effect">
+      <profile_COMMON>
+        <newparam sid="Image_0-surface">
+          <surface type="2D">
+            <init_from>Image_0</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="Image_0-sampler">
+          <sampler2D>
+            <source>Image_0-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="Image_0-sampler" texcoord="UVMap"/>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images>
+    <image id="Image_0" name="Image_0">
+      <init_from>89d377f0-b20c-427a-b6c2-7e3046f51fce.png</init_from>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="Material_0-material" name="Material_0">
+      <instance_effect url="#Material_0-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="829aa99a-ef48-00df-126b-ced2676027ed-mesh" name="cube">
+      <mesh>
+        <source id="829aa99a-ef48-00df-126b-ced2676027ed-mesh-positions">
+          <float_array id="829aa99a-ef48-00df-126b-ced2676027ed-mesh-positions-array" count="24">0.03125 0.03125 0.03125 0.03125 0.03125 -0.03125 0.03125 -0.03125 0.03125 0.03125 -0.03125 -0.03125 -0.03125 0.03125 -0.03125 -0.03125 0.03125 0.03125 -0.03125 -0.03125 -0.03125 -0.03125 -0.03125 0.03125</float_array>
+          <technique_common>
+            <accessor source="#829aa99a-ef48-00df-126b-ced2676027ed-mesh-positions-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="829aa99a-ef48-00df-126b-ced2676027ed-mesh-normals">
+          <float_array id="829aa99a-ef48-00df-126b-ced2676027ed-mesh-normals-array" count="18">0 0 -1 1 0 0 0 0 1 -1 0 0 0 1 0 0 -1 0</float_array>
+          <technique_common>
+            <accessor source="#829aa99a-ef48-00df-126b-ced2676027ed-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="829aa99a-ef48-00df-126b-ced2676027ed-mesh-map-0">
+          <float_array id="829aa99a-ef48-00df-126b-ced2676027ed-mesh-map-0-array" count="48">0 1 1 1 1 0 0 0 0 1 0.998047 1 0.998047 0.013672 0 0.013672 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 1 1 1 0.032227 0 0.032227</float_array>
+          <technique_common>
+            <accessor source="#829aa99a-ef48-00df-126b-ced2676027ed-mesh-map-0-array" count="24" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="829aa99a-ef48-00df-126b-ced2676027ed-mesh-vertices">
+          <input semantic="POSITION" source="#829aa99a-ef48-00df-126b-ced2676027ed-mesh-positions"/>
+        </vertices>
+        <polylist material="Material_0-material" count="6">
+          <input semantic="VERTEX" source="#829aa99a-ef48-00df-126b-ced2676027ed-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#829aa99a-ef48-00df-126b-ced2676027ed-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#829aa99a-ef48-00df-126b-ced2676027ed-mesh-map-0" offset="2" set="0"/>
+          <vcount>4 4 4 4 4 4</vcount>
+          <p>3 0 3 6 0 2 4 0 1 1 0 0 2 1 7 3 1 6 1 1 5 0 1 4 7 2 11 2 2 10 0 2 9 5 2 8 6 3 15 7 3 14 5 3 13 4 3 12 5 4 19 0 4 18 1 4 17 4 4 16 6 5 23 3 5 22 2 5 21 7 5 20</p>
+        </polylist>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="6c4d6e26-7e00-d0c4-adb0-39dfd5343b38" name="bone" type="NODE">
+        <scale sid="scale">1 1 1</scale>
+        <translate sid="location">0.03125 0.03125 0.03125</translate>
+        <rotate sid="rotationZ">0 0 1 0</rotate>
+        <rotate sid="rotationY">0 1 0 0</rotate>
+        <rotate sid="rotationX">1 0 0 0</rotate>
+        <node id="829aa99a-ef48-00df-126b-ced2676027ed" name="cube" type="NODE">
+          <scale sid="scale">1 1 1</scale>
+          <translate sid="location">0 0 0</translate>
+          <rotate sid="rotationZ">0 0 1 0</rotate>
+          <rotate sid="rotationY">0 1 0 0</rotate>
+          <rotate sid="rotationX">1 0 0 0</rotate>
+          <instance_geometry url="#829aa99a-ef48-00df-126b-ced2676027ed-mesh" name="cube">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="Material_0-material" target="#Material_0-material">
+                  <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+  <library_animations>
+    <animation id="animation-6c4d6e26-7e00-d0c4-adb0-39dfd5343b38" name="6c4d6e26-7e00-d0c4-adb0-39dfd5343b38">
+      <animation id="bone_rotation_euler" name="bone_rotation_euler">
+        <source id="bone_rotation_euler-input">
+          <float_array id="bone_rotation_euler-input-array" count="17">0 0.041667 0.083333 0.125 0.208333 0.291667 0.333333 0.375 0.416667 0.5 0.583333 0.666667 0.75 0.833333 0.916667 1 1</float_array>
+          <technique_common>
+            <accessor source="#bone_rotation_euler-input-array" count="17" stride="1">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="bone_rotation_euler_X-output">
+          <float_array id="bone_rotation_euler_X-output-array" count="17">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</float_array>
+          <technique_common>
+            <accessor source="#bone_rotation_euler_X-output-array" count="17" stride="1">
+              <param name="ANGLE" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="bone_rotation_euler_X-sampler">
+          <input semantic="INPUT" source="#bone_rotation_euler-input"/>
+          <input semantic="OUTPUT" source="#bone_rotation_euler_X-output"/>
+        </sampler>
+        <channel source="#bone_rotation_euler_X-sampler" target="6c4d6e26-7e00-d0c4-adb0-39dfd5343b38/rotationX.ANGLE"/>
+        <source id="bone_rotation_euler_Y-output">
+          <float_array id="bone_rotation_euler_Y-output-array" count="17">0 -8.701099 -19.594908 -32.367187 -62.290218 -95.956306 -113.40741 -130.851562 -147.974533 -180 -211.962967 -246.370361 -280.75 -312.629639 -339.537048 -359 -359</float_array>
+          <technique_common>
+            <accessor source="#bone_rotation_euler_Y-output-array" count="17" stride="1">
+              <param name="ANGLE" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="bone_rotation_euler_Y-sampler">
+          <input semantic="INPUT" source="#bone_rotation_euler-input"/>
+          <input semantic="OUTPUT" source="#bone_rotation_euler_Y-output"/>
+        </sampler>
+        <channel source="#bone_rotation_euler_Y-sampler" target="6c4d6e26-7e00-d0c4-adb0-39dfd5343b38/rotationY.ANGLE"/>
+        <source id="bone_rotation_euler_Z-output">
+          <float_array id="bone_rotation_euler_Z-output-array" count="17">0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</float_array>
+          <technique_common>
+            <accessor source="#bone_rotation_euler_Z-output-array" count="17" stride="1">
+              <param name="ANGLE" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="bone_rotation_euler_Z-sampler">
+          <input semantic="INPUT" source="#bone_rotation_euler-input"/>
+          <input semantic="OUTPUT" source="#bone_rotation_euler_Z-output"/>
+        </sampler>
+        <channel source="#bone_rotation_euler_Z-sampler" target="6c4d6e26-7e00-d0c4-adb0-39dfd5343b38/rotationZ.ANGLE"/>
+      </animation>
+      <animation id="bone_scale" name="bone_scale">
+        <source id="bone_scale-input">
+          <float_array id="bone_scale-input-array" count="17">0 0.041667 0.083333 0.125 0.208333 0.291667 0.333333 0.375 0.416667 0.5 0.583333 0.666667 0.75 0.833333 0.916667 1 1</float_array>
+          <technique_common>
+            <accessor source="#bone_scale-input-array" count="17" stride="1">
+              <param name="TIME" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="bone_scale-output">
+          <float_array id="bone_scale-output-array" count="51">1 1 1 1.027344 1.027344 1.027344 1.065972 1.065972 1.065972 1.113281 1.113281 1.113281 1.223524 1.223524 1.223524 1.33724 1.33724 1.33724 1.388889 1.388889 1.388889 1.433594 1.433594 1.433594 1.46875 1.46875 1.46875 1.5 1.5 1.5 1.46875 1.46875 1.46875 1.388889 1.388889 1.388889 1.28125 1.28125 1.28125 1.166667 1.166667 1.166667 1.065972 1.065972 1.065972 1 1 1 1 1 1</float_array>
+          <technique_common>
+            <accessor source="#bone_scale-output-array" count="51" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <sampler id="bone_scale-sampler">
+          <input semantic="INPUT" source="#bone_scale-input"/>
+          <input semantic="OUTPUT" source="#bone_scale-output"/>
+        </sampler>
+        <channel source="#bone_scale-sampler" target="6c4d6e26-7e00-d0c4-adb0-39dfd5343b38/scale"/>
+      </animation>
+    </animation>
+  </library_animations>
+  <library_animation_clips>
+    <animation_clip id="move" name="move" start="0" end="1"/>
+  </library_animation_clips>
+</COLLADA>
